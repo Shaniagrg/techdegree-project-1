@@ -54,8 +54,19 @@ const quotes = [
 
 /***
  * `getRandomQuote` function
+ * Generate random index number 
+ 
+ Parameter 
+  -  None
+
+  Return
+    - quotes[randomNumber]
 ***/
 
+function getRandomQuote (){
+  let randomNumber = Math.floor(Math.random()* quotes.length);
+  return quotes[randomNumber];
+}
 
 
 /***
