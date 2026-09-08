@@ -99,6 +99,11 @@ function printQuote(){
                   </span>`;
   }
 
+  //checks if the tags exist in randomquote and then prints  
+  if (randomQuote.tags){
+    quoteHtml += `<span> ${randomQuote.tags.join(', ')}</span>`
+  }
+
   //close the p tag so that everything is included within it
   quoteHtml += '</p>';
   document.getElementById('quote-box').innerHTML = quoteHtml; 
