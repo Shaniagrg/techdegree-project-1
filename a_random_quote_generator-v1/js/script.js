@@ -84,7 +84,7 @@ function getRandomColor(){
 ***/
 
 function getRandomQuote (){
-  let randomNumber = Math.floor(Math.random()* quotes.length);
+  const randomNumber = Math.floor(Math.random()* quotes.length);
   return quotes[randomNumber];
 }
 
@@ -103,7 +103,7 @@ Return
 function printQuote(){
 
   //Store the random quote in randomQuote
-  let randomQuote = getRandomQuote();
+  const randomQuote = getRandomQuote();
 
   document.body.style.backgroundColor = getRandomColor();
 
@@ -132,6 +132,9 @@ function printQuote(){
   document.getElementById('quote-box').innerHTML = quoteHtml; 
 }
 printQuote();
+
+//It prints a new quote to the page at regular intervals of 10 seconds
+setInterval(printQuote, 10000)
 
 /***
  * click event listener for the print quote button
