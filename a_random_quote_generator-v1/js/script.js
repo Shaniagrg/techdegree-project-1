@@ -110,19 +110,19 @@ function printQuote(){
   let quoteHtml = `<p class="quote"> ${randomQuote.quote} </p>
                    <p class="source">${randomQuote.source} `;
 
-  //checks if the year exist in randomquote and then prints                
+  //checks if the year exist in randomQuote and then prints                
   if (randomQuote.year){
     quoteHtml += `<span class="year"> ${randomQuote.year} </span>`;
   }  
   
-  //checks if the citation exist in randomquote and then prints   
+  //checks if the citation exist in randomQuote and then prints   
   if (randomQuote.citation){
     quoteHtml += `<span class="citation"> 
                     <a target = "_blank" href = "${randomQuote.citation}">${randomQuote.citationName}</a> 
                   </span>`;
   }
 
-  //checks if the tags exist in randomquote and then prints  
+  //checks if the tags exist in randomQuote and then prints  
   if (randomQuote.tags){
     quoteHtml += `<span class = "tags"> ${randomQuote.tags.join(', ')}</span>`
   }
