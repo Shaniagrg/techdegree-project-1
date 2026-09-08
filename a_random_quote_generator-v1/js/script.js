@@ -124,7 +124,7 @@ function printQuote(){
 
   //checks if the tags exist in randomquote and then prints  
   if (randomQuote.tags){
-    quoteHtml += `<span> ${randomQuote.tags.join(', ')}</span>`
+    quoteHtml += `<span class = "tags"> ${randomQuote.tags.join(', ')}</span>`
   }
 
   //close the p tag so that everything is included within it
