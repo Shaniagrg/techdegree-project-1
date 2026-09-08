@@ -51,7 +51,27 @@ const quotes = [
   }
 ]
 
+/*
+* `getRandomColor`
+* Everytime new code genereates it will generate new background color
 
+Parameter
+  - None
+Return
+  - randomColor
+*/
+
+function getRandomColor(){
+  //each variable will generate number between 0 to 255
+  const red = Math.floor(Math.random()* 256);
+  const green = Math.floor(Math.random()* 256);
+  const blue = Math.floor(Math.random()* 256);
+
+  //each random number generated in the variable red,green and blue will combine to get the rgb
+  const randomColor = `rgb(${red}, ${green}, ${blue})`;
+
+  return randomColor;
+}
 /***
  * `getRandomQuote` function
  * Generate random index number 
@@ -81,8 +101,11 @@ Return
 ***/
 
 function printQuote(){
+
   //Store the random quote in randomQuote
   let randomQuote = getRandomQuote();
+
+  document.body.style.backgroundColor = getRandomColor();
 
   let quoteHtml = `<p class="quote"> ${randomQuote.quote} </p>
                    <p class="source">${randomQuote.source} `;
