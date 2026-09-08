@@ -71,9 +71,39 @@ function getRandomQuote (){
 
 /***
  * `printQuote` function
+ * save the quote inside a variable and + if year or citation then print the quote
+ 
+Parameter
+  - None
+
+Return 
+  - None
 ***/
 
+function printQuote(){
+  //Store the random quote in randomQuote
+  let randomQuote = getRandomQuote();
 
+  let quoteHtml = `<p class="quote"> ${randomQuote.quote} </p>
+                   <p class="source">${randomQuote.source} `;
+
+  //checks if the year exist in randomquote and then prints                
+  if (randomQuote.year){
+    quoteHtml += `<span class="year"> ${randomQuote.year} </span>`;
+  }  
+  
+  //checks if the citation exist in randomquote and then prints   
+  if (randomQuote.citation){
+    quoteHtml += `<span class="citation"> 
+                    <a target = "_blank" href = "${randomQuote.citation}">${randomQuote.citationName}</a> 
+                  </span>`;
+  }
+
+  //close the p tag so that everything is included within it
+  quoteHtml += '</p>';
+  document.getElementById('quote-box').innerHTML = quoteHtml; 
+}
+printQuote();
 
 /***
  * click event listener for the print quote button
